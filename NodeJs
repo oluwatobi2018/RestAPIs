@@ -1,0 +1,24 @@
+const request = require('request');
+
+const options = {
+  method: 'POST',
+  url: 'https://api.sendchamp.com/api/v1/sms/send',
+  headers: {
+    Accept: 'application/json, */*',
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer {Access Key}'
+  },
+  form: {
+    to: ['2348170881742'],
+    message: 'Test message',
+    sender_name: 'jide',
+    route: 'international'
+  }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+  
