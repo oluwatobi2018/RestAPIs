@@ -1,0 +1,15 @@
+import requests
+
+url = "https://api.sendchamp.com/api/v1/sms/send"
+
+payload = "to=2348170881742&message=Test%20message&sender_name=jide&route=international"
+headers = {
+    "Accept": "application/json, */*",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {Access Key}"
+}
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
+    
