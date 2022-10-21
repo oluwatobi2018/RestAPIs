@@ -1,0 +1,10 @@
+curl --request POST
+  --url https://api.sendchamp.com/api/v1/sms/send
+  --header 'Accept: application/json, */*'
+  --header 'Authorization: Bearer {Access Key}'
+  --header 'Content-Type: application/json'
+  --data to=2348170881742
+  --data 'message=Test message'
+  --data sender_name=jide
+  --data route=international
+      
