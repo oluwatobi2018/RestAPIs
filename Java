@@ -1,0 +1,14 @@
+OkHttpClient client = new OkHttpClient();
+
+MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+RequestBody body = RequestBody.create(mediaType, "to=2348170881742&message=Test%20message&sender_name=jide&route=international");
+Request request = new Request.Builder()
+  .url("https://api.sendchamp.com/api/v1/sms/send")
+  .post(body)
+  .addHeader("Accept", "application/json, */*")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("Authorization", "Bearer {Access Key}")
+  .build();
+
+Response response = client.newCall(request).execute();
+    
